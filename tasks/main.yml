@@ -21,6 +21,5 @@
     name: FAHClient
     state: started
     enabled: true
-    use: service
   become_user: root
   become: true
