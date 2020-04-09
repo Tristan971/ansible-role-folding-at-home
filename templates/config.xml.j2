@@ -1,15 +1,15 @@
 <!-- {{ ansible_managed }} -->
 <config>
-  <user value="{{ folding_at_home_user }}"/>
-  <team value="{{ folding_at_home_team }}"/>
-  <passkey value="{{ folding_at_home_passkey }}"/>
-  <power value="{{ folding_at_home_power }}"/>
-  <gpu value="{{ folding_at_home_use_gpu }}"/>
+  <user v='{{ folding_at_home_user }}'/>
+  <team v='{{ folding_at_home_team }}'/>
+  <passkey v='{{ folding_at_home_passkey }}'/>
+  <power v='{{ folding_at_home_power }}'/>
+  <gpu v='{{ folding_at_home_use_gpu }}'/>
 {% if folding_at_home_proxy is defined %}
-  <proxy value="{{ folding_at_home_proxy }}"/>
-  <proxy-enable value="true"/>
+  <proxy v='{{ folding_at_home_proxy }}'/>
+  <proxy-enable v='true'/>
 {% endif %}
 {% if folding_at_home_web_ips is defined %}
-  <web-allow value="{{ folding_at_home_web_ips }}" />
+  <web-allow v='{{ folding_at_home_web_ips }}' />
 {% endif %}
 </config>
