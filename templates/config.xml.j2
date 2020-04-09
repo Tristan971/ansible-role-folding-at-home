@@ -10,6 +10,7 @@
   <proxy-enable v='true'/>
 {% endif %}
 {% if folding_at_home_web_ips is defined %}
+  <allow v='{{ folding_at_home_web_ips }}' />
   <web-allow v='{{ folding_at_home_web_ips }}' />
 {% endif %}
 </config>
