@@ -9,7 +9,7 @@
   <proxy value="{{ folding_at_home_proxy }}"/>
   <proxy-enable value="true"/>
 {% endif %}
-{% if folding_at_home_web_public is defined %}
-  <web-allow>0/0</web-allow>
+{% if folding_at_home_web_ips is defined %}
+  <web-allow value="{{ folding_at_home_web_ips }} />
 {% endif %}
 </config>
