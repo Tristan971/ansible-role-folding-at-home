@@ -13,6 +13,10 @@
   register: fahclient_version
   when:     fahclient_installed.rc == 0
 
+- name: Set FAH update as fact if needed
+  set_fact:
+    fah_to_update: "{{ fahclient_version.stdout }} != {{ fah_version }}"
+
 - name: Install procps dependency (needed by init script)
   yum:
     name:  procps
@@ -27,4 +31,4 @@
     state: present
   become:      true
   become_user: root
-  when:        "fahclient_installed.rc == 1 or fahclient_version.stdout != {{ fah_version }}"
+  when:        fahclient_installed.rc == 1 or fah_to_update
