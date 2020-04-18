@@ -15,7 +15,7 @@
 
 - name: Set FAH update as fact if needed
   set_fact:
-    fah_to_update: "{{ fahclient_version.stdout }} != {{ fah_version }} or {{ fahclient_installed.rc != 0 }}"
+    fah_to_update: "{{ fahclient_version.stdout != fah_version or fahclient_installed.rc != 0 }}"
 
 - name: Should we update
   debug:
